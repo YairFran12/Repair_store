@@ -189,10 +189,15 @@
    {{--  termina comprobar Errores --}}
 
    <div class="container">
+   
 
+      <br>
+      <center>
+        <h2>  <b> Clientes </b>  </h2>
+     </center>
+ 
+   <br> <br>
 
-  <br> <br>
-                 
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
             Agregar <i class="fas fa-user-plus"></i> </button>
 
@@ -231,6 +236,7 @@
                 </tbody>
               </table>
               
+              <br> <br>
             
               <a href="ver_ocultosC" class="btn btn-warning" > Clientes Ocultos  <i class="fas fa-eye-slash"></i></a>
 

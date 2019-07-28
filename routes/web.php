@@ -13,8 +13,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/PDF', function () {
+
+    $pdf = PDF::loadHTML('<h1>Test</h1>');
+    return $pdf->stream();
 });
 
 Route::get('principal', 'principalController@index');
@@ -30,3 +32,12 @@ Route::get('ver_ocultosC', 'clientesController@ver_OcultosC');
 Route::resource('/empleados', 'empleadosController');
 Route::get('ocultar_empleado/{id}', 'empleadosController@ocultar');
 Route::get('ver_ocultosE', 'empleadosController@ver_ocultosE');
+
+/* PDF */
+
+Route::get('/presupuesto', 'presupuestoController@crearPDF');
+Route::get('/descargar', 'presupuestoController@descargarPDF')->name('desca');
+
+/* Telegram */
+
+Route::get('/updated-activity', 'TelegramBotController@updatedActivity');
