@@ -22,22 +22,23 @@ Route::get('/PDF', function () {
 Route::get('principal', 'principalController@index');
 
 /* Clientes */
-
 Route::resource('/clientes', 'clientesController');
 Route::get('ocultar_cliente/{id}', 'clientesController@ocultar');
 Route::get('ver_ocultosC', 'clientesController@ver_OcultosC');
 
-/* Elientes */
-
+/* Empleados */
 Route::resource('/empleados', 'empleadosController');
 Route::get('ocultar_empleado/{id}', 'empleadosController@ocultar');
 Route::get('ver_ocultosE', 'empleadosController@ver_ocultosE');
 
-/* PDF */
+// Productos
+Route::resource('/productos', 'productosController');
+Route::get('ocultar_producto/{id}', 'productosController@ocultar');
+Route::get('ver_ocultosP', 'productosController@ver_ocultosP');
 
+/* PDF */
 Route::get('/presupuesto', 'presupuestoController@crearPDF');
 Route::get('/descargar', 'presupuestoController@descargarPDF')->name('desca');
 
 /* Telegram */
-
 Route::get('/updated-activity', 'TelegramBotController@updatedActivity');

@@ -16,8 +16,7 @@
      <!-- fonts icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
+    
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link rel="stylesheet" href="css/bootstrap.min.css">
      
@@ -37,7 +36,7 @@
                 <center>
                 <a href="/principal" class="btn btn-primary">Principal</a>
                 <br> <br> <br> <br>
-                <a href="" class="btn btn-primary">Productos</a>
+                <a href="/productos" class="btn btn-primary">Productos</a>
                 <br> <br>
                 <a href="ver_ocultos" class="btn btn-primary">Ventas</a>
                 <br> <br>
