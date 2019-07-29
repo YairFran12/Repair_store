@@ -38,7 +38,7 @@
                 <br> <br> <br> <br>
                 <a href="/productos" class="btn btn-primary">Productos</a>
                 <br> <br>
-                <a href="ver_ocultos" class="btn btn-primary">Ventas</a>
+                <a href="/ventas" class="btn btn-primary">Ventas</a>
                 <br> <br>
                 <a href="/empleados" class="btn btn-primary">Empleados</a>
                 <br> <br>
@@ -47,7 +47,9 @@
                 <a href="ver_ocultos" class="btn btn-primary">Compras</a>
                 <br> <br>
                 <a href="ver_ocultos" class="btn btn-primary">Presupuesto</a>
-            </center>
+                <br><br><br><br><br><br>
+                <font color="gray"> Chino JR. </font>
+                </center>
 
                 <br>
               </div>

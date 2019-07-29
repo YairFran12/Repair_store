@@ -36,6 +36,9 @@ Route::resource('/productos', 'productosController');
 Route::get('ocultar_producto/{id}', 'productosController@ocultar');
 Route::get('ver_ocultosP', 'productosController@ver_ocultosP');
 
+// Ventas
+Route::resource('/ventas', 'ventasController');
+
 /* PDF */
 Route::get('/presupuesto', 'presupuestoController@crearPDF');
 Route::get('/descargar', 'presupuestoController@descargarPDF')->name('desca');
