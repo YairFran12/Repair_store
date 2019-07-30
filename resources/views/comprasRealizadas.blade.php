@@ -24,6 +24,7 @@
           <th scope="col">Modelo</th>
           <th scope="col">Cantidad</th>
           <th scope="col">Precio</th>
+          <th scope="col">Total</th>
           <th scope="col">Fecha</th>
         </tr>
       </thead>
@@ -38,6 +39,7 @@
           <td> {{$datosVi -> modelo}}</td>
           <td> {{$datosVi -> cantidad}}</td>
           <td> {{$datosVi -> precio_c}}</td>
+          <td> {{$datosVi -> total}}</td>
           <td> {{$datosVi -> fecha}}</td>
         </tr>
 

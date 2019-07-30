@@ -63,10 +63,6 @@
   {!!form::text('precio', null, ['id'=> 'precio', 'class' => 'form-control', 'placeholder' => 'Ingrese precio'])!!}
   <br>
 
-  {!!Form::label('Total')!!} <span style = "color:red"> * </span>
-  {!!form::text('total', null, ['id'=> 'total', 'class' => 'form-control', 'placeholder' => 'Ingrese total'])!!}
-  <br>
-
   {!!Form::label('Fecha')!!} <span style = "color:red"> * </span>
   {!!form::date('fecha', null, ['id'=> 'fecha', 'class' => 'form-control', 'placeholder' => 'Ingrese fecha'])!!}
   <br>  

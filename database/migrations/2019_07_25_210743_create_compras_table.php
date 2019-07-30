@@ -20,6 +20,7 @@ class CreateComprasTable extends Migration
             $table->string('modelo');
             $table->integer('cantidad');
             $table->integer('precio_c');
+            $table->integer('total');
             $table->date('fecha');
         });
     }

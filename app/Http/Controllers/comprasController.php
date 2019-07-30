@@ -42,9 +42,10 @@ class comprasController extends Controller
         $modelo = $request->input('elmodelo');
         $cantidad = $request->input('cantidad');
         $precio = $request->input('precio');
+        $total = $request->input('precio') * $request->input('cantidad');
         $fecha = $request->input('fecha');
     
-        compras::create(['nombre'=>$producto, 'marca'=>$marca, 'modelo'=>$modelo, 'cantidad'=> $cantidad, 'precio_c'=> $precio, 'fecha'=> $fecha]);
+        compras::create(['nombre'=>$producto, 'marca'=>$marca, 'modelo'=>$modelo, 'cantidad'=> $cantidad, 'precio_c'=> $precio, 'total'=>$total, 'fecha'=> $fecha]);
         $emps = compras::all();
         return view('comprasRealizadas')->with('emps', $emps);
       }

@@ -7,5 +7,5 @@ class compras extends Model{
     protected $primarykey = 'id';
     public $timestamps = false;
 
-    protected $fillable = ['nombre', 'marca', 'modelo', 'marca', 'cantidad', 'cantidad', 'precio_c', 'fecha'];
+    protected $fillable = ['nombre', 'marca', 'modelo', 'marca', 'cantidad', 'cantidad', 'precio_c', 'total', 'fecha'];
 }

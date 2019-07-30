@@ -57,7 +57,7 @@ class ventasController extends Controller{
     $modelo = $request->input('elmodelo');
     $cantidad = $request->input('cantidad');
     $precio = $request->input('precio');
-    $total = $request->input('total');
+    $total = $request->input('cantidad') * $request->input('precio');
     $fecha = $request->input('fecha');
 
     ventas::create(['id_cliente' => $idcliente, 'id_empleado'=>$idempleado, 'nombre_producto'=>$producto, 'marca'=>$marca, 'modelo'=>$modelo, 'cantidad'=> $cantidad, 'precio'=> $precio, 'total'=>$total, 'fecha_v'=> $fecha]);
