@@ -56,3 +56,8 @@ Route::get('/descargar', 'presupuestoController@descargarPDF')->name('desca');
 
 /* Telegram */
 Route::get('/updated-activity', 'TelegramBotController@updatedActivity');
+
+// Login
+Route::get('login', 'loginController@interfaz');
+Route::post('exito', 'loginController@verificar');
+
