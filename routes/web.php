@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\principalController;
 
 
 /*
@@ -13,13 +14,8 @@
 |
 */
 
-Route::get('/PDF', function () {
 
-    $pdf = PDF::loadHTML('<h1>Test</h1>');
-    return $pdf->stream();
-});
-
-Route::get('principal', 'principalController@index');
+Route::get('/index', 'principalController@vista');
 
 /* Clientes */
 
@@ -35,9 +31,21 @@ Route::get('ver_ocultosE', 'empleadosController@ver_ocultosE');
 
 /* PDF */
 
-Route::get('/presupuesto', 'presupuestoController@crearPDF');
-Route::get('/descargar', 'presupuestoController@descargarPDF')->name('desca');
+Route::get('/mirarPDF', 'presupuestosController@verPDF')->name('verPDF');
+Route::get('/descargarPDF', 'presupuestosController@descargarPDF')->name('descaPDF');
 
 /* Telegram */
 
+
+Route::get('/', 'TelegramBotController@sendMessage');
+Route::post('/send-message', 'TelegramBotController@storeMessage');
+Route::get('/send-photo', 'TelegramBotController@sendPhoto');
+Route::post('/store-photo', 'TelegramBotController@storePhoto');
 Route::get('/updated-activity', 'TelegramBotController@updatedActivity');
+
+/* Presupuesto */
+
+Route::get('/crearPresupuesto', 'presupuestosController@index');
+Route::post('/crearPresu', 'presupuestosController@store');
+Route::put('/editarPresu/{id}', 'presupuestosController@update');
+Route::get('/creado', 'presupuestosController@index2');
