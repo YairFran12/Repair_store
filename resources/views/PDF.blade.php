@@ -31,6 +31,8 @@
                     <th scope="col">Producto</th>
                     <th scope="col">Descripcion</th>
                     <th scope="col">Precio</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="cil">Total  </th>
                     
                   </tr>
                 </thead>
@@ -40,7 +42,9 @@
                       <tr>
                         <td> {{$datosVi -> producto}}</td>
                         <td> {{$datosVi -> descripcion}}</td>
-                        <td> $ {{$datosVi -> precio}}</td>
+                        <td> ${{$datosVi -> precio}}</td>
+                         <td> {{$datosVi -> cantidad}}</td>
+                        <td> ${{$datosVi -> total}}</td>
                       </tr>
                         @endforeach
                     </tbody>

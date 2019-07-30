@@ -93,6 +93,7 @@ class presupuestosController extends Controller
         $emps->descripcion = $request->input('descripcion');
         $emps->precio = $request->input('precio');
         $emps->cantidad = $request->input('cantidad');
+        $emps->total = $request->input('precio') * $request->input('cantidad');
 
         $emps->save();
     }

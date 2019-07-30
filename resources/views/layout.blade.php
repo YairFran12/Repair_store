@@ -1,7 +1,10 @@
+
 <!doctype html>
 <html lang="en">
 
 <head>
+
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,60 +29,62 @@
 <body>
 
 
-        <div class="d-flex" id="wrapper">
+       
+    <div class="d-flex" id="wrapper">
 
-            <!-- Sidebar -->
-            <div class="bg-primary" id="sidebar-wrapper">
-              <div class="sidebar-heading"></div>
-              <div class="list-group list-group-flush">
-                <br><br><br><br>
-                <center>
-                <a href="/index" class="btn btn-primary">Principal</a>
-                <br> <br> <br> <br>
-                <a href="/productos" class="btn btn-primary">Productos</a>
-                <br> <br>
-                <a href="/ventas" class="btn btn-primary">Ventas</a>
-                <br> <br>
-                <a href="/empleados" class="btn btn-primary">Empleados</a>
-                <br> <br>
-                <a href="/clientes" class="btn btn-primary">Clientes</a>
-                <br> <br>
-                <a href="/compras" class="btn btn-primary">Compras</a>
-                <br> <br>
-                <a href="/crearPresupuesto" class="btn btn-primary">Presupuesto</a>
+        <!-- Sidebar -->
+        <div class="bg-primary" id="sidebar-wrapper">
+          <div class="sidebar-heading"></div>
+          <div class="list-group list-group-flush">
+            <br><br><br><br>
+            <center>
+            <a href="/index" class="btn btn-primary">Principal</a>
+            <br> <br> <br> <br>
+            <a href="/productos" class="btn btn-primary">Productos</a>
+            <br> <br>
+            <a href="/ventas" class="btn btn-primary">Ventas</a>
+            <br> <br>
+            <a href="/empleados" class="btn btn-primary">Empleados</a>
+            <br> <br>
+            <a href="/clientes" class="btn btn-primary">Clientes</a>
+            <br> <br>
+            <a href="/compras" class="btn btn-primary">Compras</a>
+            <br> <br>
+            <a href="/crearPresupuesto" class="btn btn-primary">Presupuesto</a>
+            <br><br><br><br><br>
+            <font color="gray"> Chino JR. </font>
             </center>
 
-                <br>
-              </div>
-            </div>
-            <!-- /#sidebar-wrapper -->
-        
-            <!-- Page Content -->
-            <div id="page-content-wrapper">
-        
-              <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-                
-        
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-        
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                        <button class="btn btn-outline-secondary" id="menu-toggle"><i class="fas fa-arrows-alt-h"></i></button>
-
-                  </ul>
-                </div>
-              </nav>
-
-              @yield('content')
-        
-
-            </div>
-            <!-- /#page-content-wrapper -->
-        
+            <br>
           </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+    
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+    
+          <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            
+    
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <button class="btn btn-outline-secondary" id="menu-toggle"><i class="fas fa-arrows-alt-h"></i></button>
 
+              </ul>
+            </div>
+          </nav>
+
+          @yield('content')
+    
+
+        </div>
+        <!-- /#page-content-wrapper -->
+    
+      </div>
 
 
     <!-- Optional JavaScript -->

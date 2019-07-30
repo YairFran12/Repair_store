@@ -52,7 +52,7 @@ Route::get('/descargarPDF', 'presupuestosController@descargarPDF')->name('descaP
 /* Telegram */
 
 
-Route::get('/', 'TelegramBotController@sendMessage');
+
 Route::post('/send-message', 'TelegramBotController@storeMessage');
 Route::get('/send-photo', 'TelegramBotController@sendPhoto');
 Route::post('/store-photo', 'TelegramBotController@storePhoto');
@@ -69,3 +69,9 @@ Route::get('/crearPresupuesto', 'presupuestosController@index');
 Route::post('/crearPresu', 'presupuestosController@store');
 Route::put('/editarPresu/{id}', 'presupuestosController@update');
 Route::get('/creado', 'presupuestosController@index2');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@indexito');
+Route::get('/logout', 'HomeController@indexito');

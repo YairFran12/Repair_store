@@ -154,14 +154,14 @@
                         <td> {{$datosVi -> id}}</td>
                         <td> {{$datosVi -> producto}}</td>
                         <td> {{$datosVi -> descripcion}}</td>
-                        <td> ${{$datosVi -> precio}}</td>
+                        <td> {{$datosVi -> precio}}</td>
                         <td> {{$datosVi -> cantidad}}</td>
                         <td> ${{$datosVi -> total}}</td>
                             
                             
                             <td>
                               <a href="#" class="btn btn-info edit" > <i class="fas fa-edit"></i> </i></a>
-                              <a href="#" class="btn btn-danger" > <i class="fas fa-trash-alt"></i></i></a>
+                            
                             </td>
                       </tr>
                         @endforeach
@@ -228,6 +228,8 @@
                $('#producto').val(data[1]);
                $('#descripcion').val(data[2]);
                $('#precio').val(data[3]);
+               $('#cantidad').val(data[4]);
+
               
            });
 
