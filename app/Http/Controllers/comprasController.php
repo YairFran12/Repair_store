@@ -1,8 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+
+use App\compras;
+use App\productos;
 
 class comprasController extends Controller
 {
@@ -15,6 +20,40 @@ class comprasController extends Controller
     {
         //
     }
+
+    public function vista(){
+        $seleccion = productos::pluck('nombre', 'nombre');
+        return view('/compras')->with('variable', $seleccion);
+    }
+
+    public function primera_seleccion($nombre){
+        $consulta = productos::where('nombre', $nombre)->get();
+        return $consulta;
+    }
+
+    public function segunda_seleccion($marca){
+         $consulta = productos::where('marca', $marca)->get();
+        return $consulta;
+    }
+
+    public function insertar(Request $request){
+        $producto = $request->input('elproducto');
+        $marca = $request->input('lamarca');
+        $modelo = $request->input('elmodelo');
+        $cantidad = $request->input('cantidad');
+        $precio = $request->input('precio');
+        $fecha = $request->input('fecha');
+    
+        compras::create(['nombre'=>$producto, 'marca'=>$marca, 'modelo'=>$modelo, 'cantidad'=> $cantidad, 'precio_c'=> $precio, 'fecha'=> $fecha]);
+        $emps = compras::all();
+        return view('comprasRealizadas')->with('emps', $emps);
+      }
+    
+      public function ver_comprasR()
+      {
+          $emps = compras::all();
+          return view('comprasRealizadas')->with('emps', $emps);
+      }
 
     /**
      * Show the form for creating a new resource.

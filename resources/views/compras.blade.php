@@ -16,19 +16,11 @@
 <div class="container">
     
   <br>
-  <center><h2><b> Realizar venta </b></h2></center>
-  <a href="ver_ventas" class="btn btn-success" > Ventas realizadas  <i class="fas fa-eye-slash"></i></a>
+  <center><h2><b> Realizar compra </b></h2></center>
+  <a href="ver_compras" class="btn btn-success" > Compras realizadas  <i class="fas fa-eye-slash"></i></a>
   <br><br>
 
-  {!!Form::open(array('url'=>'insertar_venta', 'method'=>'POST', 'autocomplete'=>'off'))!!}
-
-  {!!Form::label('ID de Cliente')!!} <span style = "color:red"> * </span>
-  {!!form::text('idcliente', null, ['id'=> 'idcliente', 'class' => 'form-control', 'placeholder' => 'Ingrese ID'])!!}
-  <br>
-
-  {!!Form::label('ID de Empleado')!!} <span style = "color:red"> * </span>
-  {!!form::text('idempleado', null, ['id'=> 'idempleado', 'class' => 'form-control', 'placeholder' => 'Ingrese ID'])!!}
-  <br>
+  {!!Form::open(array('url'=>'insertar_compra', 'method'=>'POST', 'autocomplete'=>'off'))!!}
 
     <table>
       <tr>
@@ -63,15 +55,11 @@
   {!!form::text('precio', null, ['id'=> 'precio', 'class' => 'form-control', 'placeholder' => 'Ingrese precio'])!!}
   <br>
 
-  {!!Form::label('Total')!!} <span style = "color:red"> * </span>
-  {!!form::text('total', null, ['id'=> 'total', 'class' => 'form-control', 'placeholder' => 'Ingrese total'])!!}
-  <br>
-
   {!!Form::label('Fecha')!!} <span style = "color:red"> * </span>
   {!!form::date('fecha', null, ['id'=> 'fecha', 'class' => 'form-control', 'placeholder' => 'Ingrese fecha'])!!}
   <br>  
 
-  {!!Form::submit('Vender',['name' => 'grabar', 'id' => 'grabar', 'content' => '<span> Registrar </span>', 'class' => 'btn btn-primary'])!!}
+  {!!Form::submit('Comprar',['name' => 'grabar', 'id' => 'grabar', 'content' => '<span> Registrar </span>', 'class' => 'btn btn-primary'])!!}
   {!!Form::close()!!}
     
 </div>

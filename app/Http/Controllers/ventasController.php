@@ -1,20 +1,33 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
-use App\ventas;
+use App\Http\Controllers\Controller;
 
-class ventasController extends Controller
-{
+# Librerias
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+
+# Modelos
+use App\ventas;
+use App\productos;
+
+use Illuminate\Support\Facades\DB;
+
+
+class ventasController extends Controller{
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $emps = ventas::all();
-        return view('ventas') -> with('emps', $emps);
+    public function index(){
+        $seleccion = productos::pluck('nombre', 'nombre');
+        return view('/ventas')->with('variable', $seleccion);
+    }
+
+    public function vista(){
+        $seleccion = productos::pluck('nombre', 'nombre');
+        return view('/ventas')->with('variable', $seleccion);
     }
 
     /**
@@ -22,11 +35,41 @@ class ventasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create(){
         //
     }
 
+    public function primera_seleccion($nombre){
+        $consulta = productos::where('nombre', $nombre)->get();
+        return $consulta;
+    }
+
+    public function segunda_seleccion($marca){
+         $consulta = productos::where('marca', $marca)->get();
+        return $consulta;
+    }
+
+    public function insertar(Request $request){
+    $idcliente = $request->input('idcliente');
+    $idempleado = $request->input('idempleado');
+    $producto = $request->input('elproducto');
+    $marca = $request->input('lamarca');
+    $modelo = $request->input('elmodelo');
+    $cantidad = $request->input('cantidad');
+    $precio = $request->input('precio');
+    $total = $request->input('total');
+    $fecha = $request->input('fecha');
+
+    ventas::create(['id_cliente' => $idcliente, 'id_empleado'=>$idempleado, 'nombre_producto'=>$producto, 'marca'=>$marca, 'modelo'=>$modelo, 'cantidad'=> $cantidad, 'precio'=> $precio, 'total'=>$total, 'fecha_v'=> $fecha]);
+    $emps = ventas::all();
+    return view('ventasRealizadas')->with('emps', $emps);
+  }
+
+  public function ver_ventasR()
+  {
+      $emps = ventas::all();
+      return view('ventasRealizadas')->with('emps', $emps);
+  }
     /**
      * Store a newly created resource in storage.
      *

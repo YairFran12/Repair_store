@@ -37,7 +37,18 @@ Route::get('ocultar_producto/{id}', 'productosController@ocultar');
 Route::get('ver_ocultosP', 'productosController@ver_ocultosP');
 
 // Ventas
-Route::resource('/ventas', 'ventasController');
+Route::get('/ventas', 'ventasController@vista');
+Route::get('/ventitas/{nombre}', 'ventasController@primera_seleccion');
+Route::get('/ventitas_marca/{marca}', 'ventasController@segunda_seleccion');
+Route::post('/insertar_venta', 'ventasController@insertar');
+Route::get('ver_ventas', 'ventasController@ver_ventasR');
+
+// Compras
+Route::get('/compras', 'comprasController@vista');
+Route::get('/compritas/{nombre}', 'comprasController@primera_seleccion');
+Route::get('/compritas_marca/{marca}', 'comprasController@segunda_seleccion');
+Route::post('/insertar_compra', 'comprasController@insertar');
+Route::get('ver_compras', 'comprasController@ver_comprasR');
 
 /* PDF */
 Route::get('/presupuesto', 'presupuestoController@crearPDF');
