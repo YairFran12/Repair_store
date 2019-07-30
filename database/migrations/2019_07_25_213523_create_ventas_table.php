@@ -19,6 +19,9 @@ class CreateVentasTable extends Migration
             $table->foreign('id_cliente')->references('id')->on('clientes');
             $table->unsignedBigInteger('id_empleado');
             $table->foreign('id_empleado')->references('id')->on('empleados');
+            $table->string('nombre_producto');
+            $table->string('marca');
+            $table->string('modelo');
             $table->integer('cantidad');
             $table->integer('precio');
             $table->integer('total');

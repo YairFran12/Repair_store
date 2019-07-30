@@ -21,46 +21,44 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel"> Empleado </h5>
+            <h5 class="modal-title" id="exampleModalLabel"> Productos </h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-      <form action="{{ action('empleadosController@store') }}" method="POST" >
+      <form action="{{ action('productosController@store') }}" method="POST" >
 
           {{ csrf_field() }}
           <div class="modal-body">
 
                <div class="form-group">
                    <label> Nombre </label>
-                   <input type="text" name ="nombre" class="form-control"  placeholder="Ingresa el nombre" >
+                   <input type="text" name ="nombre" class="form-control"  placeholder="Ingresa el nombre del producto" >
                </div>
 
               <div class="form-group">
-                    <label> Apellido Paterno </label>
-                    <input type="text" name ="apellido_p" class="form-control" placeholder="Ingresa apellido paterno">
+                    <label> Marca </label>
+                    <input type="text" name ="marca" class="form-control" placeholder="Ingresa marca del producto">
               </div>
 
               <div class="form-group">
-                <label> Apellido Materno </label>
-                <input type="text" name ="apellido_m" class="form-control" placeholder="Ingresa apellido materno">
+                <label> Modelo </label>
+                <input type="text" name ="modelo" class="form-control" placeholder="Ingresa modelo del producto">
              </div>
 
              <div class="form-group">
-                <label> Dirección </label>
-                <input type="text" name ="direccion" class="form-control" placeholder="Ingresa la dirección">
+                <label> Precio de compra </label>
+                <input type="text" name ="precio_c" class="form-control" placeholder="Ingresa el precio de compra">
               </div>
 
               <div class="form-group">
-                <label> Fecha Nacimiento </label>
-                <input type="date" name ="fecha_n" class="form-control" placeholder="Ingresa fecha de nacimiento">
+                <label> Precio de venta </label>
+                <input type="text" name ="precio_v" class="form-control" placeholder="Ingresa el precio de venta">
               </div>
-
-
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary"> Agregar Empleado </button>
+            <button type="submit" class="btn btn-primary"> Agregar producto </button>
           </div>
       </form>
         </div>
@@ -77,50 +75,50 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel"> Editar Empleado </h5>
+              <h5 class="modal-title" id="exampleModalLabel"> Editar producto </h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-        <form action="/empleados" method="POST" id="editForm">
+        <form action="/productos" method="POST" id="editForm">
   
             {{ csrf_field() }}
             {{ method_field('PUT') }}
 
             <div class="modal-body">
   
-                 <div class="form-group">
+            <div class="form-group">
                      <label> Nombre </label>
                      <input type="text"   name ="nombre" id="nombre" class="form-control"  placeholder="Ingresa el nombre" >
                  </div>
   
                  <div class="form-group">
-                        <label> Apellido Paterno </label>
-                        <input type="text" name ="apellido_p" id ="apellido_p" class="form-control"  placeholder="Ingresa Apellido Paterno" >
+                        <label> Marca </label>
+                        <input type="text" name ="marca" id ="marca" class="form-control"  placeholder="Ingresa Apellido Paterno" >
                 </div>
 
                 <div class="form-group">
-                    <label> Apellido Materno </label>
-                    <input type="text"  name ="apellido_m" id="apellido_m" class="form-control"  placeholder="Ingresa Appelido Materno" >
+                    <label> Modelo </label>
+                    <input type="text"  name ="modelo" id="modelo" class="form-control"  placeholder="Ingresa Appelido Materno" >
 
                 </div>
  
                 <div class="form-group">
-                       <label> Direccion </label>
-                       <input type="text" name ="direccion" id ="direccion" class="form-control"  placeholder="Ingresa la Direccion" >
+                       <label> Precio de compra </label>
+                       <input type="text" name ="precio_c" id ="precio_c" class="form-control"  placeholder="Ingresa la Direccion" >
                </div>
 
                <div class="form-group">
-                <label> Fecha Nacimiento </label>
-                <input type="date"   name ="fecha_n" id="fecha_n" class="form-control"  placeholder="Ingresa Numero Telefonico" >
+                <label> Precio de venta </label>
+                <input type="text"   name ="precio_v" id="precio_v" class="form-control"  placeholder="Ingresa Numero Telefonico" >
 
             </div>
-  
                 
             </div>
+
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary"> Actualizar </button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary"> Actualizar </button>
             </div>
         </form>
           </div>
@@ -135,25 +133,25 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel"> Eliminar Juego </h5>
+              <h5 class="modal-title" id="exampleModalLabel"> Eliminar producto </h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-        <form action="/empleados" method="POST" id="deleteForm">
+        <form action="/productos" method="POST" id="deleteForm">
   
             {{ csrf_field() }}
             {{ method_field('DELETE') }}
 
             <div class="modal-body">
                 <input type="hidden" name="_method" value="DELETE">
-                <p> ¿Estas seguro que quieres eliminar el empleado? </p>
+                <p> ¿Estas seguro que quieres eliminar el producto? </p>
   
             
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary"> Si! Eliminar</button>
+              <button type="submit" class="btn btn-primary"> Eliminar</button>
             </div>
         </form>
           </div>
@@ -190,7 +188,7 @@
    <div class="container">
 <br>
      <center>
-       <h2>  <b> Empleados </b>  </h2>
+       <h2>  <b> Productos </b>  </h2>
     </center>
 
   <br> <br>
@@ -205,29 +203,29 @@
                   <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Nombre</th>
-                    <th scope="col">Apellido Paterno</th>
-                    <th scope="col">Apellido Materno</th>
-                    <th scope="col">Dirección</th>
-                    <th scope="col">Fecha de Nacimiento</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Modelo</th>
+                    <th scope="col">Precio compra</th>
+                    <th scope="col">Precio venta</th>
                     <th scope="col">Acción</th>
                   </tr>
                 </thead>
+                
                 <tbody>
                     @foreach ($emps as $datosVi)
                       
                   <tr>
                     <th> {{$datosVi -> id}} </th>
                     <td> {{$datosVi -> nombre}}</td>
-                    <td> {{$datosVi -> apellido_p}}</td>
-                    <td> {{$datosVi -> apellido_m}}</td>
-                    <td> {{$datosVi -> direccion}}</td>
-                    <td> {{$datosVi -> fecha_n}}</td>
+                    <td> {{$datosVi -> marca}}</td>
+                    <td> {{$datosVi -> modelo}}</td>
+                    <td> {{$datosVi -> precio_c}}</td>
+                    <td> {{$datosVi -> precio_v}}</td>
                     <td>
                             <a href="#" class="btn btn-info edit" > <i class="fas fa-edit"> </i></a>
                             <a href="#" class="btn btn-danger delete" ><i class="fas fa-trash"></i></a>
-                            <a href="ocultar_empeado/{{ $datosVi->id }}" class="btn btn-warning" ><i class="fas fa-eye-slash"></i></a>
-                            
-                            </td>
+                            <a href="ocultar_producto/{{ $datosVi->id }}" class="btn btn-warning" ><i class="fas fa-eye-slash"></i></a>       
+                    </td>
                   </tr>
                     @endforeach
                 </tbody>
@@ -235,7 +233,7 @@
               
               <br><br>
             
-              <a href="ver_ocultos" class="btn btn-warning" > Empleados Ocultos  <i class="fas fa-eye-slash"></i></a>
+              <a href="ver_ocultosP" class="btn btn-warning" > Productos ocultos  <i class="fas fa-eye-slash"></i></a>
 
    </div>
 
@@ -288,13 +286,13 @@
     console.log(data);
 
     $('#nombre').val(data[1]);
-    $('#apellido_p').val(data[2]);
-    $('#apellido_m').val(data[3]);
-    $('#direccion').val(data[4]);
-    $('#fecha_n').val(data[5]);
+    $('#marca').val(data[2]);
+    $('#modelo').val(data[3]);
+    $('#precio_c').val(data[4]);
+    $('#precio_v').val(data[5]);
     
 
-    $('#editForm').attr('action', '/empleados/'+data[0]);
+    $('#editForm').attr('action', '/productos/'+data[0]);
     $('#editModal').modal('show');
 
     });
@@ -311,7 +309,7 @@
 
         //$('#id').val(data[0]);
 
-        $('#deleteForm').attr('action', '/empleados/'+data[0]);
+        $('#deleteForm').attr('action', '/productos/'+data[0]);
         $('#deleteModal').modal('show');
 
 

@@ -18,18 +18,33 @@ use App\Http\Controllers\principalController;
 Route::get('/index', 'principalController@vista');
 
 /* Clientes */
-
 Route::resource('/clientes', 'clientesController');
 Route::get('ocultar_cliente/{id}', 'clientesController@ocultar');
 Route::get('ver_ocultosC', 'clientesController@ver_OcultosC');
 
-/* Elientes */
-
+/* Empleados */
 Route::resource('/empleados', 'empleadosController');
 Route::get('ocultar_empleado/{id}', 'empleadosController@ocultar');
 Route::get('ver_ocultosE', 'empleadosController@ver_ocultosE');
 
-/* PDF */
+// Productos
+Route::resource('/productos', 'productosController');
+Route::get('ocultar_producto/{id}', 'productosController@ocultar');
+Route::get('ver_ocultosP', 'productosController@ver_ocultosP');
+
+// Ventas
+Route::get('/ventas', 'ventasController@vista');
+Route::get('/ventitas/{nombre}', 'ventasController@primera_seleccion');
+Route::get('/ventitas_marca/{marca}', 'ventasController@segunda_seleccion');
+Route::post('/insertar_venta', 'ventasController@insertar');
+Route::get('ver_ventas', 'ventasController@ver_ventasR');
+
+// Compras
+Route::get('/compras', 'comprasController@vista');
+Route::get('/compritas/{nombre}', 'comprasController@primera_seleccion');
+Route::get('/compritas_marca/{marca}', 'comprasController@segunda_seleccion');
+Route::post('/insertar_compra', 'comprasController@insertar');
+Route::get('ver_compras', 'comprasController@ver_comprasR');
 
 Route::get('/mirarPDF', 'presupuestosController@verPDF')->name('verPDF');
 Route::get('/descargarPDF', 'presupuestosController@descargarPDF')->name('descaPDF');
@@ -41,6 +56,11 @@ Route::get('/', 'TelegramBotController@sendMessage');
 Route::post('/send-message', 'TelegramBotController@storeMessage');
 Route::get('/send-photo', 'TelegramBotController@sendPhoto');
 Route::post('/store-photo', 'TelegramBotController@storePhoto');
+/* PDF */
+Route::get('/presupuesto', 'presupuestoController@crearPDF');
+Route::get('/descargar', 'presupuestoController@descargarPDF')->name('desca');
+
+/* Telegram */
 Route::get('/updated-activity', 'TelegramBotController@updatedActivity');
 
 /* Presupuesto */
